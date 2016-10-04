@@ -1,0 +1,9 @@
+<h1 align="center"><%= @tape.name %></h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<div align="center">
+  <%= link_to "Edit Tape Info", edit_tape_path(@tape) %>
+</div>

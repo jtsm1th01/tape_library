@@ -1,0 +1,20 @@
+<% if @tape.errors.any? %>
+  <div align="center">
+    <%= pluralize(@tape.errors.count, "error") %> prevented tape from being saved:
+    <% @tape.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>
+
+<div align="center">
+    <%= form_for @tape do |f| %>
+    <%= f.label :name, "Tape name:" %>
+    <%= f.text_field :name %></br>
+    <%= f.label :description, "Tape description:" %>
+    <%= f.text_area :description %></br>
+    <%= "Home:" %>
+    <%= f.collection_select(:location_id, Location.all, :id, :name) %></br>
+    <%= f.submit %>
+    <% end %>    
+</div>

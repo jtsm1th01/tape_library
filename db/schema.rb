@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003205557) do
+ActiveRecord::Schema.define(version: 20161004193352) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "tapes", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.integer "location_id"
+    t.integer "format_id"
   end
 
 end

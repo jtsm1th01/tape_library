@@ -1,0 +1,19 @@
+<h1 align="center">All Tapes</h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<% @tapes.each do |tape| %>
+
+<div align="center">
+  <%= link_to "#{tape.name}", tape_path(tape) %>
+  <%= tape.description %>
+  <%= tape.home.name %>
+</div>
+
+<% end %>
+
+<div align="center">
+  <%= link_to "Create New Tape", new_tape_path %>
+</div>
