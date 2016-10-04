@@ -1,0 +1,17 @@
+<h1 align="center">All Locations</h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<% @locations.each do |location| %>
+
+<div align="center">
+  <%= link_to "#{location.name}", location_path(location) %>
+</div>
+
+<% end %>
+
+<div align="center">
+  <%= link_to "Create New Location", new_location_path %>
+</div>

@@ -1,0 +1,16 @@
+<% if @location.errors.any? %>
+  <div align="center">
+    <%= pluralize(@location.errors.count, "error") %> prevented location from being saved:
+    <% @location.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>
+
+<div align="center">
+    <%= form_for @location do |f| %>
+    <%= f.label :name, "Location name:" %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>    
+</div>
