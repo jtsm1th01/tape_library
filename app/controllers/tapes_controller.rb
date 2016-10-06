@@ -7,7 +7,6 @@ end
 
 def index
   @tapes = Tape.all
-  @qr = RQRCode::QRCode.new('check it out, Karla! QRCodes in my app!')
 end
 
 def new
@@ -16,7 +15,7 @@ end
 
 def show
   @tape = Tape.find(params[:id])
-  @qr = RQRCode::QRCode.new(@tape.name)
+  @qr = RQRCode::QRCode.new('tmstapelibrary.herokuapp.com/tapes/#{@tape.name}')
 end
 
 def edit
