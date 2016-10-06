@@ -1,7 +1,13 @@
 class TapesController < ApplicationController
+require 'rqrcode'
+
+def qrcode
+  @qr = RQRCode::QRCode.new('hello world')
+end
 
 def index
   @tapes = Tape.all
+  @qr = RQRCode::QRCode.new('check it out, Karla! QRCodes in my app!')
 end
 
 def new
@@ -10,6 +16,7 @@ end
 
 def show
   @tape = Tape.find(params[:id])
+  @qr = RQRCode::QRCode.new(@tape.name)
 end
 
 def edit
