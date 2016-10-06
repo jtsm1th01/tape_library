@@ -1,0 +1,9 @@
+<h1 align="center"><%= @show.name %></h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<div align="center">
+  <%= link_to "Edit Show Name", edit_show_path(@show) %>
+</div>

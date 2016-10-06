@@ -1,0 +1,16 @@
+<% if @show.errors.any? %>
+  <div align="center">
+    <%= pluralize(@show.errors.count, "error") %> prevented show from being saved:
+    <% @show.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>
+
+<div align="center">
+    <%= form_for @show do |f| %>
+    <%= f.label :name, "Show name:" %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>    
+</div>

@@ -13,8 +13,15 @@
     <%= f.text_field :name %></br>
     <%= f.label :description, "Tape description:" %>
     <%= f.text_area :description %></br>
-    <%= "Home:" %>
-    <%= f.collection_select(:location_id, Location.all, :id, :name) %></br>
+    <%= "Home Location:" %>
+    <%= f.collection_select(:location_id, Location.all, :id, :name, :prompt => "Choose one...") %></br>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-8">
+    <%= f.collection_check_boxes :show_ids, Show.all, :id, :name do |cb| %>
+    <% cb.label(class:"checkbox-inline input-checkbox") {cb.check_box(class:"checkbox") + cb.text} %>
+    <% end %>
+  </div>
+</div>
     <%= f.submit %>
     <% end %>    
 </div>
