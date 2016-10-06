@@ -15,7 +15,7 @@ end
 
 def show
   @tape = Tape.find(params[:id])
-  @qr = RQRCode::QRCode.new('tmstapelibrary.herokuapp.com/tapes/#{@tape.name}')
+  @qr = RQRCode::QRCode.new('tmstapelibrary.herokuapp.com/tapes/'+@tape.id.to_s)
 end
 
 def edit
