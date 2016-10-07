@@ -4,16 +4,23 @@
 <%= message %>
 <% end %>
 
-<% @tapes.each do |tape| %>
-
+<table class="table">
+  <tr>
+    <th>Tape Name</th>
+    <th>Format</th>
+    <th>Description</th>
+    <th>Storage Location</th>
+    <th>Checked Out?</th>
+  </tr>
+  <% @tapes.each do |tape| %>
+  <tr>
+    <td><%= link_to "#{tape.name}", tape_path(tape) %></td>
+    <td><%= tape.format.name %></td>
+    <td><%= tape.description %></td>
+    <td><%= tape.home.name %></td>
+  </tr>
+  <% end %>
+</table>
 <div align="center">
-  <%= link_to "#{tape.name}", tape_path(tape) %>
-  <%= tape.description %>
-  <%= tape.home.name %>
-</div>
-
-<% end %>
-
-<div align="center">
-  <%= link_to "Create New Tape", new_tape_path %>
+  <%= link_to "Add Tape", new_tape_path, class:"btn btn-small btn-primary" %>
 </div>

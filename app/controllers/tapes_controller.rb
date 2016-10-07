@@ -48,7 +48,7 @@ end
 private
 
 def tape_params
-  params.require(:tape).permit(:name,:description,:location_id,show_ids:[])
+  params.require(:tape).permit(:name,:format,:description,:location_id,show_ids:[])
 end
 
 end

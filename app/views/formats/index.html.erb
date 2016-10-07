@@ -1,0 +1,17 @@
+<h1 align="center">All Formats</h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<% @formats.each do |format| %>
+
+<div align="center">
+  <%= link_to "#{format.name}", format_path(format) %>
+</div>
+
+<% end %>
+
+<div align="center">
+  <%= link_to "Create New Format", new_format_path %>
+</div>

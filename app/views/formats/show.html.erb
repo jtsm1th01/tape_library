@@ -1,0 +1,9 @@
+<h1 align="center"><%= @format.name %></h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<div align="center">
+  <%= link_to "Edit Format Name", edit_format_path(@format) %>
+</div>

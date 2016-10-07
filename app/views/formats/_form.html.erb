@@ -1,0 +1,16 @@
+<% if @format.errors.any? %>
+  <div align="center">
+    <%= pluralize(@format.errors.count, "error") %> prevented format from being created:
+    <% @format.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>
+
+<div align="center">
+    <%= form_for @format do |f| %>
+    <%= f.label :name, "Format name:" %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>    
+</div>
