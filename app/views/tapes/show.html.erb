@@ -6,6 +6,7 @@
 
 <div align="center">
   <%= @tape.home.name %></br>
+  <%= link_to "Checkout Tape", new_checkout_path(params: { tape_id: @tape.id }), class:"btn btn-sm btn-primary" %>
   <%= link_to "Edit Tape Info", edit_tape_path(@tape), class:"btn btn-sm btn-danger" %>
 </div>
 

@@ -1,0 +1,17 @@
+<h1 align="center">All Checkouts</h1>
+
+<% flash.each do |type,message| %>
+<%= message %>
+<% end %>
+
+<% @checkouts.each do |checkout| %>
+
+<div align="center">
+  <%= link_to "#{checkout.tape.name}", tape_path(checkout.tape) %>
+  <%= checkout.tape.description %>
+  <%= checkout.tape.home.name %>
+  <%= checkout.location.name %>
+</div>
+
+<% end %>
+

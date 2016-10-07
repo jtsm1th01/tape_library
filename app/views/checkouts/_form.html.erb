@@ -1,0 +1,17 @@
+<% if @checkout.errors.any? %>
+  <div align="center">
+    <%= pluralize(@checkout.errors.count, "error") %> prevented tape from being checked out:
+    <% @checkout.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>
+
+<div align="center">
+    <%= form_for @checkout do |f| %>
+    <%= f.label :location_id, "Sending to:" %>
+    <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+    <%= f.hidden_field :tape_id, :value => params[:tape_id] %>
+    <%= f.submit %>
+    <% end %>    
+</div>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :tapes
   resources :shows
+  resources :checkouts
 
   # Example resource route with options:
   #   resources :products do
