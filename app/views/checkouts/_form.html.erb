@@ -12,6 +12,8 @@
     <%= f.label :location_id, "Sending to:" %>
     <%= f.collection_select(:location_id, Location.all, :id, :name) %>
     <%= f.hidden_field :tape_id, :value => params[:tape_id] %>
-    <%= f.submit %>
-    <% end %>    
+</div>
+<div align="center">
+    <%= f.submit "Checkout", class:"btn btn-med btn-primary" %>
+    <% end %>  
 </div>

@@ -4,8 +4,22 @@
 <%= message %>
 <% end %>
 
+<table class="table">
+  <tr>
+    <th>Format</th>
+    <th>Description</th>
+    <th>Storage Location</th>
+    <th>Checked Out?</th>
+  </tr>
+  <tr>
+    <td><%= @tape.format.name %></td>
+    <td><%= @tape.description %></td>
+    <td><%= @tape.home.name %></td>
+    <td>Checked out (to be added)</td>
+  </tr>
+</table>
+
 <div align="center">
-  <%= @tape.home.name %></br>
   <%= link_to "Checkout Tape", new_checkout_path(params: { tape_id: @tape.id }), class:"btn btn-sm btn-primary" %>
   <%= link_to "Edit Tape Info", edit_tape_path(@tape), class:"btn btn-sm btn-danger" %>
 </div>

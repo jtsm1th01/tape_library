@@ -6,6 +6,7 @@ end
 
 def new
   @checkout = Checkout.new
+  @tape = Tape.find(params[:tape_id])
 end
 
 def show
